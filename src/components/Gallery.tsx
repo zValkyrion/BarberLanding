@@ -26,10 +26,10 @@ const Gallery = () => {
   ];
 
   const filters = [
-    { id: "all", label: "All Work", icon: "✨" },
-    { id: "haircuts", label: "Haircuts", icon: "✂️" },
-    { id: "beards", label: "Beards", icon: "🧔" },
-    { id: "styles", label: "Styling", icon: "💫" }
+    { id: "all", label: "Todo el Trabajo", icon: "\u2728" },
+    { id: "haircuts", label: "Cortes de Cabello", icon: "\u2702\ufe0f" },
+    { id: "beards", label: "Barbas", icon: "\ud83e\uddd4" },
+    { id: "styles", label: "Estilizado", icon: "\ud83d\udcab" }
   ];
 
   const filteredItems = activeFilter === "all" 
@@ -51,10 +51,10 @@ const Gallery = () => {
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-black mb-4 scroll-reveal line-draw">
-            OUR <span className="text-morphing">PORTFOLIO</span>
+            NUESTRO <span className="text-morphing">PORTAFOLIO</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8 scroll-reveal typewriter">
-            Witness the transformation. Every cut tells a story of precision, artistry, and pure luxury craftsmanship.
+          <p className="text-xl text-muted-foreground w-full text-center mb-8 scroll-reveal typewriter break-words">
+            Sé testigo de la transformación. Cada corte cuenta una historia de precisión, arte y puro lujo artesanal.
           </p>
 
           {/* Ultra Enhanced Filter Buttons */}
@@ -65,7 +65,7 @@ const Gallery = () => {
                 onClick={() => setActiveFilter(filter.id)}
                 className={`px-6 py-3 rounded-full font-semibold transition-all duration-500 relative overflow-hidden group morph-button micro-bounce
                   ${activeFilter === filter.id
-                    ? "glass-card text-primary pulse-glow"
+                    ? "bg-gold-deep text-white button-gold hover:bg-gold-dark hover:text-white"
                     : "neuro-card text-foreground hover:clay-card hover:text-primary tilt-hover"
                   }`}
                 style={{ animationDelay: `${index * 0.1}s` }}
@@ -81,7 +81,7 @@ const Gallery = () => {
                 {/* Progress bar for active filter */}
                 {activeFilter === filter.id && (
                   <div className="absolute bottom-0 left-0 right-0 progress-bar h-0.5">
-                    <div className="progress-fill bg-gradient-to-r from-primary to-accent"></div>
+                    <div className="progress-fill bg-gradient-to-r from-gold to-gold-deep"></div>
                   </div>
                 )}
               </button>
@@ -125,10 +125,10 @@ const Gallery = () => {
                       <div className="progress-fill bg-gradient-to-r from-primary to-accent" style={{ width: `${item.rating * 20}%` }}></div>
                     </div>
                     <p className="text-white/80 text-sm opacity-0 group-hover:opacity-100 transition-all duration-500 delay-200">
-                      Crafted by <span className="text-primary font-semibold">{item.artist}</span>
+                      Realizado por <span className="text-primary font-semibold">{item.artist}</span>
                     </p>
                     <p className="text-white/60 text-xs opacity-0 group-hover:opacity-100 transition-all duration-500 delay-400">
-                      Premium styling with attention to every detail
+                      Estilizado premium con atención a cada detalle
                     </p>
                   </div>
                 </div>
@@ -166,10 +166,10 @@ const Gallery = () => {
 
         {/* Ultra Enhanced View More Section */}
         <div className="text-center mt-12 scroll-reveal">
-          <div className="inline-flex items-center gap-3 px-8 py-4 glass-card rounded-full hover:neuro-card transition-all duration-700 cursor-pointer group morph-button tilt-hover">
-            <span className="font-semibold text-liquid">View Complete Portfolio</span>
-            <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 pulse-ring">
-              <span className="text-black font-bold floating-element-fast">→</span>
+          <div className="inline-flex items-center gap-3 px-8 py-4 bg-gold-deep rounded-full hover:bg-gold-dark transition-all duration-700 cursor-pointer group morph-button tilt-hover shadow-lg hover:text-white">
+            <span className="font-semibold text-white">Ver Portafolio Completo</span>
+            <div className="w-8 h-8 bg-gold rounded-full flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 pulse-ring">
+              <span className="text-gold-dark font-bold floating-element-fast">→</span>
             </div>
             <div className="loading-dots">
               <span></span>

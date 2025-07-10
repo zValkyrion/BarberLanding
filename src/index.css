@@ -16,7 +16,11 @@
     --popover: 0 0% 8%;
     --popover-foreground: 48 100% 85%;
 
-    --primary: 48 100% 67%;
+    --gold-light: 48 100% 85%;   /* dorado claro */
+    --gold: 48 100% 67%;         /* dorado medio */
+    --gold-deep: 48 100% 50%;    /* dorado profundo */
+    --gold-dark: 48 80% 35%;     /* dorado oscuro */
+    --primary: var(--gold);      /* ahora primary es dorado medio */
     --primary-foreground: 0 0% 0%;
 
     --secondary: 0 0% 12%;
@@ -25,13 +29,13 @@
     --muted: 0 0% 12%;
     --muted-foreground: 0 0% 60%;
 
-    --accent: 200 100% 60%;
+    --accent: var(--gold-deep);  /* acento dorado profundo */
     --accent-foreground: 0 0% 0%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 0 0% 15%;
+    --border: var(--gold-dark);  /* bordes dorado oscuro */
     --input: 0 0% 15%;
     --ring: 48 100% 67%;
 
@@ -434,9 +438,7 @@
   }
 
   .parallax-container {
-    height: 100vh;
     overflow-x: hidden;
-    overflow-y: auto;
     perspective: 1px;
   }
 
@@ -465,6 +467,26 @@
 
   .loading-dots span:nth-child(1) { animation-delay: -0.32s; }
   .loading-dots span:nth-child(2) { animation-delay: -0.16s; }
+
+  .bg-gold-light { background-color: hsl(var(--gold-light)); }
+  .bg-gold { background-color: hsl(var(--gold)); }
+  .bg-gold-deep { background-color: hsl(var(--gold-deep)); }
+  .bg-gold-dark { background-color: hsl(var(--gold-dark)); }
+  .text-gold-light { color: hsl(var(--gold-light)); }
+  .text-gold { color: hsl(var(--gold)); }
+  .text-gold-deep { color: hsl(var(--gold-deep)); }
+  .text-gold-dark { color: hsl(var(--gold-dark)); }
+  .border-gold-dark { border-color: hsl(var(--gold-dark)); }
+  .border-gold { border-color: hsl(var(--gold)); }
+  .border-gold-light { border-color: hsl(var(--gold-light)); }
+  .from-gold-light { --tw-gradient-from: hsl(var(--gold-light)); }
+  .from-gold { --tw-gradient-from: hsl(var(--gold)); }
+  .from-gold-deep { --tw-gradient-from: hsl(var(--gold-deep)); }
+  .from-gold-dark { --tw-gradient-from: hsl(var(--gold-dark)); }
+  .to-gold-light { --tw-gradient-to: hsl(var(--gold-light)); }
+  .to-gold { --tw-gradient-to: hsl(var(--gold)); }
+  .to-gold-deep { --tw-gradient-to: hsl(var(--gold-deep)); }
+  .to-gold-dark { --tw-gradient-to: hsl(var(--gold-dark)); }
 }
 
 /* Keyframe Animations */
@@ -485,11 +507,11 @@
 @keyframes liquidMotion {
   0%, 100% { 
     background-position: 0% 50%;
-    filter: blur(0px);
+    filter: none;
   }
   50% { 
     background-position: 100% 50%;
-    filter: blur(2px);
+    filter: none;
   }
 }
 
@@ -508,7 +530,7 @@
 
 @keyframes floatFast {
   0%, 100% { transform: translateY(0px) scale(1); }
-  50% { transform: translateY(-15px) scale(1.05); }
+  50% { transform: translateY(-3px) scale(1.05); }
 }
 
 @keyframes pulseGlow {
@@ -631,4 +653,19 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+.testimonial-slide-left {
+  animation: testimonialSlideLeft 0.7s;
+}
+.testimonial-slide-right {
+  animation: testimonialSlideRight 0.7s;
+}
+@keyframes testimonialSlideLeft {
+  0% { opacity: 0; transform: translateX(60px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+@keyframes testimonialSlideRight {
+  0% { opacity: 0; transform: translateX(-60px); }
+  100% { opacity: 1; transform: translateX(0); }
 }

@@ -12,37 +12,37 @@ const Services = () => {
   const services = [
     {
       icon: Scissors,
-      title: "Precision Haircut",
-      description: "Expert cuts tailored to your style and face shape using premium techniques and luxury products.",
-      price: "$45",
-      features: ["Personal Consultation", "Precision Cut", "Luxury Wash & Style", "Finishing Touch"],
+      title: "Corte de Precisión",
+      description: "Cortes expertos adaptados a tu estilo y forma de rostro usando técnicas premium y productos de lujo.",
+      price: "$120",
+      features: ["Consulta Personalizada", "Corte de Precisión", "Lavado & Estilo de Lujo", "Toque Final"],
       gradient: "from-primary to-accent",
       morphClass: "morph-scissors"
     },
     {
       icon: Crown,
-      title: "Beard Sculpting",
-      description: "Professional beard trimming and shaping for the perfect masculine look with artistic precision.",
-      price: "$35",
-      features: ["Beard Analysis", "Precision Trim & Shape", "Hot Towel Treatment", "Premium Beard Oil"],
+      title: "Esculpido de Barba",
+      description: "Recorte y perfilado profesional de barba para un look masculino perfecto con precisión artística.",
+      price: "$140",
+      features: ["Análisis de Barba", "Recorte & Perfilado de Precisión", "Tratamiento con Toalla Caliente", "Aceite Premium para Barba"],
       gradient: "from-accent to-primary",
       morphClass: "morph-crown"
     },
     {
       icon: Coffee,
-      title: "Hot Towel Shave",
-      description: "Classic straight razor shave with hot towels for ultimate relaxation and smooth results.",
-      price: "$55",
-      features: ["Pre-Shave Steam Treatment", "Traditional Straight Razor", "Post-Shave Care", "Cologne Application"],
+      title: "Afeitado con Toalla Caliente",
+      description: "Afeitado clásico con navaja y toallas calientes para máxima relajación y resultados suaves.",
+      price: "$180",
+      features: ["Tratamiento de Vapor Pre-Afeitado", "Navaja Clásica", "Cuidado Post-Afeitado", "Aplicación de Colonia"],
       gradient: "from-primary/80 to-accent/80",
       morphClass: "morph-coffee"
     },
     {
       icon: Sparkles,
-      title: "Luxury Package",
-      description: "Complete grooming experience combining all our premium services for the ultimate transformation.",
-      price: "$120",
-      features: ["Full Grooming Service", "Complimentary Premium Drink", "Relaxing Head Massage", "Luxury Product Kit"],
+      title: "Paquete de Lujo",
+      description: "Experiencia completa de grooming combinando todos nuestros servicios premium para una transformación total.",
+      price: "$200",
+      features: ["Servicio de Grooming Completo", "Bebida Premium de Cortesía", "Masaje Relajante de Cabeza", "Kit de Productos de Lujo"],
       gradient: "from-accent to-primary",
       morphClass: "morph-sparkles"
     }
@@ -82,10 +82,10 @@ const Services = () => {
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-black mb-4 scroll-reveal line-draw">
-            PREMIUM <span className="text-liquid">SERVICES</span>
+            SERVICIOS <span className="text-liquid">PREMIUM</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto scroll-reveal typewriter">
-            Discover our range of luxury grooming services designed for the modern gentleman who demands excellence
+            Descubre nuestra gama de servicios de barbería de lujo diseñados para el caballero moderno que exige excelencia
           </p>
         </div>
 
@@ -94,7 +94,7 @@ const Services = () => {
             <Card 
               key={index} 
               data-index={index}
-              className={`service-card group overflow-hidden relative transition-all duration-700 cursor-pointer
+              className={`service-card group overflow-hidden relative transition-all duration-700 cursor-pointer glass-card shadow-2xl border-gold/40 backdrop-blur-md bg-gradient-to-br from-gold/10 to-background/80 fade-in-up
                 ${visibleCards.includes(index) ? 'scale-in' : ''}
                 ${hoveredCard === index ? 'card-3d' : 'neuro-card'}
                 ${hoveredCard !== null && hoveredCard !== index ? 'scale-95 opacity-70' : ''}
@@ -112,7 +112,7 @@ const Services = () => {
                 <div className="absolute bottom-0 right-0 w-full h-0.5 bg-gradient-to-l from-transparent via-accent to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700 delay-200"></div>
               </div>
               
-              <CardContent className="p-6 relative z-10">
+              <CardContent className="p-6 relative z-10 backdrop-blur-sm bg-gradient-to-br from-gold/5 to-background/80 rounded-xl">
                 <div className="mb-4">
                   <div className={`w-12 h-12 bg-gradient-to-br ${service.gradient} rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 pulse-ring morph-button`}>
                     <service.icon className="w-6 h-6 text-black micro-wiggle" />
@@ -132,8 +132,8 @@ const Services = () => {
 
                 <div className="flex items-center justify-between">
                   <span className="text-2xl font-bold text-morphing group-hover:scale-110 transition-transform duration-300">{service.price}</span>
-                  <Button size="sm" variant="outline" className="border-primary text-primary hover:bg-primary hover:text-black morph-button group/btn tilt-hover">
-                    Book Now
+                  <Button size="sm" variant="outline" className="border-gold text-white hover:bg-gold-dark hover:text-white morph-button group/btn tilt-hover">
+                    Reserva Ahora
                     <ArrowRight className="ml-1 w-4 h-4 group-hover/btn:translate-x-1 transition-transform floating-element-fast" />
                   </Button>
                 </div>
@@ -153,13 +153,7 @@ const Services = () => {
         {/* Enhanced Call-to-Action Section */}
         <div className="text-center mt-16 scroll-reveal">
           <div className="inline-flex items-center gap-2 px-8 py-4 glass-card rounded-full hover:neuro-card transition-all duration-500 group morph-button">
-            <Sparkles className="w-5 h-5 text-primary floating-element-fast" />
-            <span className="text-sm font-medium text-liquid">Experience luxury grooming like never before</span>
-            <div className="loading-dots ml-2">
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
+            <span className="text-sm font-medium text-liquid">Vive el lujo del tu barber como nunca antes</span>
           </div>
         </div>
       </div>

@@ -67,58 +67,58 @@ const Hero = () => {
       <div className="absolute top-1/4 right-1/3 w-6 h-6 bg-primary rounded-full floating-element micro-wiggle stagger-6"></div>
       <div className="absolute bottom-1/4 left-1/2 w-10 h-10 border border-accent/50 rotate-45 floating-element-fast stagger-8"></div>
 
-      <div className="container mx-auto px-6 py-20 relative z-10">
+      <div className="relative py-20 z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Enhanced Content */}
-          <div className="space-y-8 faux-3d">
+          <div className="space-y-8 faux-3d w-full max-w-xs sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl">
             <Badge className={`bg-accent/20 text-accent border-accent/30 px-4 py-1 morph-button micro-bounce ${isLoaded ? 'fade-in-up stagger-1' : ''}`}>
               <Sparkles className="w-4 h-4 mr-2 floating-element-fast" />
-              Premium Barbershop Experience
+              Experiencia Premium de Barbería
             </Badge>
             
             <div className="space-y-4">
               <h1 className={`text-5xl lg:text-7xl font-black leading-tight ${isLoaded ? 'reveal-text stagger-2' : ''}`}>
-                <span className="text-reveal line-draw">ELEVATE YOUR</span>
-                <span className={`block text-liquid ${isLoaded ? 'reveal-text stagger-3' : ''}`}>STYLE</span>
+                <span className="text-reveal line-draw">ELEVA TU</span>
+                <span className={`block text-liquid ${isLoaded ? 'reveal-text stagger-3' : ''}`}>ESTILO</span>
               </h1>
               <div className={`typewriter text-xl text-muted-foreground max-w-lg ${isLoaded ? 'fade-in-up stagger-4' : ''}`}>
-                Experience the art of premium grooming with our master barbers.
+                Vive el arte del grooming premium con nuestros barberos expertos.
               </div>
             </div>
 
             <div className={`flex flex-col sm:flex-row gap-4 ${isLoaded ? 'fade-in-up stagger-5' : ''}`}>
-              <Button size="lg" className="bg-primary text-black hover:bg-primary/90 font-bold px-8 py-4 text-lg morph-button group tilt-hover">
-                Book Your Cut
+              <Button size="lg" className="bg-gold-deep text-white font-bold px-8 py-4 text-lg morph-button group tilt-hover hover:bg-gold-dark hover:text-white">
+                Reserva tu Corte
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform floating-element-fast" />
               </Button>
-              <Button size="lg" variant="outline" className="border-accent text-accent hover:bg-accent hover:text-black px-8 py-4 text-lg glass-card magnetic-hover group">
+              <Button size="lg" variant="outline" className="border-accent text-accent hover:bg-accent hover:text-accent-foreground px-8 py-4 text-lg glass-card magnetic-hover group">
                 <Play className="mr-2 w-5 h-5 group-hover:scale-110 transition-transform" />
-                Watch Demo
+                Ver Demostración
               </Button>
             </div>
 
             {/* Enhanced Animated Stats */}
-            <div className={`flex gap-8 pt-8 ${isLoaded ? 'fade-in-up stagger-6' : ''}`}>
-              <div className="text-center group clay-card p-4 rounded-lg micro-bounce">
-                <div className="text-3xl font-bold text-morphing group-hover:scale-110 transition-transform">500+</div>
-                <div className="text-sm text-muted-foreground">Happy Clients</div>
+            <div className={`flex flex-nowrap gap-4 md:gap-8 pt-8 fade-in-up stagger-6 justify-center w-full`}>
+              <div className="text-center group clay-card p-4 rounded-lg micro-bounce w-auto">
+                <div className="text-3xl font-bold text-morphing group-hover:scale-110 transition-transform">300+</div>
+                <div className="text-sm text-muted-foreground">Clientes Felices</div>
                 <div className="progress-bar h-1 mt-2">
                   <div className="progress-fill w-full"></div>
                 </div>
               </div>
-              <div className="text-center group neuro-card p-4 rounded-lg micro-bounce">
+              <div className="text-center group neuro-card p-4 rounded-lg micro-bounce w-auto">
                 <div className="flex items-center gap-1 justify-center">
                   <span className="text-3xl font-bold text-liquid group-hover:scale-110 transition-transform">4.9</span>
                   <Star className="w-6 h-6 text-primary fill-current group-hover:scale-110 transition-transform floating-element-fast" />
                 </div>
-                <div className="text-sm text-muted-foreground">Rating</div>
+                <div className="text-sm text-muted-foreground">Calificación</div>
                 <div className="progress-bar h-1 mt-2">
                   <div className="progress-fill w-4/5"></div>
                 </div>
               </div>
-              <div className="text-center group glass-card p-4 rounded-lg micro-bounce">
-                <div className="text-3xl font-bold text-morphing group-hover:scale-110 transition-transform">5+</div>
-                <div className="text-sm text-muted-foreground">Years</div>
+              <div className="text-center group glass-card p-4 rounded-lg micro-bounce w-auto">
+                <div className="text-3xl font-bold text-morphing group-hover:scale-110 transition-transform">2+</div>
+                <div className="text-sm text-muted-foreground">Años</div>
                 <div className="progress-bar h-1 mt-2">
                   <div className="progress-fill w-full"></div>
                 </div>
@@ -139,7 +139,7 @@ const Hero = () => {
               </div>
               <div className="absolute bottom-6 left-6 z-20">
                 <Badge className="bg-primary text-black font-semibold pulse-glow morph-button">
-                  Master Barber Approved
+                  Aprobado por Master Barber
                 </Badge>
               </div>
               
@@ -163,9 +163,9 @@ const Hero = () => {
       </div>
 
       {/* Enhanced Scroll Indicator */}
-      <div className={`absolute bottom-8 left-1/2 transform -translate-x-1/2 ${isLoaded ? 'fade-in-up stagger-6' : ''}`}>
+      <div className={`absolute bottom-8 left-1/2 transform -translate-x-1/2 ${isLoaded ? 'fade-in-up stagger-6' : ''} hidden lg:block`}>
         <div className="flex flex-col items-center gap-2 text-muted-foreground glass-card p-4 rounded-full">
-          <span className="text-sm font-medium">Scroll to explore</span>
+          <span className="text-sm font-medium">Desliza para explorar</span>
           <div className="loading-dots">
             <span></span>
             <span></span>

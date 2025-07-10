@@ -7,10 +7,13 @@ import Gallery from "@/components/Gallery";
 import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import AdvancedAnimations from "@/components/AdvancedAnimations";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { useAdvancedAnimations } from "@/hooks/useAdvancedAnimations";
 
 const Index = () => {
   useScrollAnimation();
+  useAdvancedAnimations();
 
   useEffect(() => {
     // Smooth scrolling for navigation links
@@ -29,22 +32,43 @@ const Index = () => {
       }
     };
 
+    // Enhanced loading sequence
+    const initializeAnimations = () => {
+      // Remove loading state
+      document.body.classList.add('loaded');
+      
+      // Trigger entrance animations
+      const heroElements = document.querySelectorAll('.hero-animate');
+      heroElements.forEach((element, index) => {
+        setTimeout(() => {
+          element.classList.add('animate-in');
+        }, index * 200);
+      });
+    };
+
+    // Add custom cursor to body
+    if (!document.querySelector('.custom-cursor')) {
+      const cursor = document.createElement('div');
+      cursor.className = 'custom-cursor';
+      document.body.appendChild(cursor);
+    }
+
     document.addEventListener('click', handleNavClick);
-    return () => document.removeEventListener('click', handleNavClick);
+    
+    // Initialize after a short delay
+    setTimeout(initializeAnimations, 100);
+
+    return () => {
+      document.removeEventListener('click', handleNavClick);
+    };
   }, []);
 
   return (
     <div className="min-h-screen bg-background text-foreground relative overflow-x-hidden">
-      {/* Cursor follower effect */}
-      <div 
-        className="fixed w-4 h-4 bg-primary/30 rounded-full pointer-events-none z-50 mix-blend-difference transition-transform duration-150"
-        style={{
-          left: 'var(--mouse-x, -100px)',
-          top: 'var(--mouse-y, -100px)',
-          transform: 'translate(-50%, -50%)'
-        }}
-      />
+      {/* Advanced Animation Components */}
+      <AdvancedAnimations />
       
+      {/* Page Content */}
       <Navigation />
       <Hero />
       <Services />
